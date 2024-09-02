@@ -27,7 +27,11 @@ function CarList({ cars }) {
           }}
         >
           {cars.map((car, idx) => (
-            <li key={idx} className="sm:w-[600px] w-[200px]">
+            <li
+              onClick={() => setCurrentIdx(idx)}
+              key={idx}
+              className="sm:w-[600px] w-[200px]"
+            >
               <img src={car.src} alt={car.alt} />
             </li>
           ))}
