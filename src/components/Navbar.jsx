@@ -65,7 +65,7 @@ function Navbar() {
               </a>
             </li>
             <li
-              className={`sm:static fixed sm:h-auto h-20 top-[80px] left-[850px] ${
+              className={`text-gray-fontPrimary sm:static fixed sm:h-auto h-20 top-[80px] left-[850px] ${
                 mobileMenuOpen ? "-translate-x-[850px]" : ""
               } transition sm:bg-transparent bg-gray-200 sm:w-auto w-full grid place-items-center sm:block`}
             >

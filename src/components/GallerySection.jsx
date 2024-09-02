@@ -59,7 +59,7 @@ function GallerySection() {
           <h2 className="font-primary text-blue-primary sm:text-2xl text-xl mb-2">
             Prezentacja firmy
           </h2>
-          <p className="sm:text-5xl text-3xl font-heading mb-6">
+          <p className="sm:text-5xl text-3xl text-gray-fontSecondary font-heading mb-6">
             Zobacz naszą galerię zdjęć
           </p>
           <div className="flex gap-12">

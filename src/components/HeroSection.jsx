@@ -6,11 +6,11 @@ function HeroSection() {
     <section className="bg-gray-primary relative">
       <Container className="sm:pt-52 pt-32 sm:pb-32 h-screen min-h-[800px] sm:min-h-[1000px]">
         <div className="flex flex-col gap-12">
-          <p className="font-heading sm:text-7xl text-5xl">
+          <p className="font-heading sm:text-7xl text-5xl text-gray-fontPrimary">
             Sprzedajemy samochody
             <br /> z europy
           </p>
-          <p className="font-primary text-base">
+          <p className="font-primary text-base text-gray-fontPrimary">
             Kup komfortowy pojazd, aby każda podróż <br /> była wyjątkowym
             przeżyciem.
           </p>
