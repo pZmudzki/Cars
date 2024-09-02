@@ -3,8 +3,11 @@ import FAQQuestion from "./faq/FAQQuestion";
 
 function FAQSection() {
   return (
-    <section className="bg-gray-fontSecondary py-20 text-white">
-      <Container className="flex gap-20">
+    <section
+      id="faq"
+      className="bg-gray-fontSecondary sm:py-20 py-10 text-white"
+    >
+      <Container className="flex sm:flex-row flex-col sm:gap-20 gap-10">
         <FAQQuestion
           title="Laudantium eaque et est
           doloribus perspiciatis nisi numquam provident repellat dignissimos

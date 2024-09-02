@@ -53,13 +53,13 @@ function GallerySection() {
   const [selectedCategory, setSelectedCategory] = useState("cars");
 
   return (
-    <section id="gallery" className="py-20 bg-gray-primary">
+    <section id="gallery" className="py-10 sm:py-20 bg-gray-primary">
       <Container>
         <div className="mb-20">
-          <h2 className="font-primary text-blue-primary text-2xl mb-2">
+          <h2 className="font-primary text-blue-primary sm:text-2xl text-xl mb-2">
             Prezentacja firmy
           </h2>
-          <p className="text-5xl font-heading mb-6">
+          <p className="sm:text-5xl text-3xl font-heading mb-6">
             Zobacz naszą galerię zdjęć
           </p>
           <div className="flex gap-12">

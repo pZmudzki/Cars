@@ -3,8 +3,11 @@ import Container from "./ui/Container";
 import Link from "./ui/Link";
 
 function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [navHidden, setNavHidden] = useState(false);
+
+  console.log(mobileMenuOpen);
 
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
@@ -14,7 +17,11 @@ function Navbar() {
   }, [lastScrollY]);
 
   const controlNavbar = () => {
-    if (window.scrollY > lastScrollY && window.scrollY > 80) {
+    if (
+      window.scrollY > lastScrollY &&
+      window.scrollY > 80 &&
+      !mobileMenuOpen
+    ) {
       setNavHidden(true);
     } else {
       setNavHidden(false);
@@ -28,18 +35,17 @@ function Navbar() {
       <header
         className={`fixed top-0 ${
           navHidden ? "-translate-y-20" : ""
-        } transition left-0 right-0 h-20 px-4 grid place-items-center bg-gray-primary z-50`}
+        } transition left-0 right-0 h-20 grid place-items-center bg-gray-primary z-50`}
       >
-        <Container>
+        <Container className="flex items-center justify-between">
           <ul className="flex items-center justify-between w-full font-secondary">
             <li>
               <a
                 href="#"
-                className="font-primary text-3xl font-bold flex items-center gap-3"
+                className="font-primary sm:text-3xl text-xl font-bold flex items-center sm:gap-3 gap-2"
               >
                 <svg
-                  width="30px"
-                  height="30px"
+                  className="sm:w-7 sm:h-7 h-5 w-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -58,16 +64,30 @@ function Navbar() {
                 </div>
               </a>
             </li>
-            <li>
+            <li
+              className={`sm:static fixed sm:h-auto h-20 top-[80px] left-[850px] ${
+                mobileMenuOpen ? "-translate-x-[850px]" : ""
+              } transition sm:bg-transparent bg-gray-200 sm:w-auto w-full grid place-items-center sm:block`}
+            >
               <nav className="text-base flex gap-6">
                 <a href="#gallery">Galeria zdjęć</a>
                 <a href="#faq">FaQ</a>
               </nav>
             </li>
-            <li>
+            <li
+              className={`sm:static fixed sm:h-auto h-20 top-[160px] left-[850px] ${
+                mobileMenuOpen ? "-translate-x-[850px]" : ""
+              } transition delay-75 sm:bg-transparent bg-gray-300 sm:w-auto w-full grid place-items-center sm:block`}
+            >
               <Link href="tel:+48123456789">Zadzwoń do nas</Link>
             </li>
           </ul>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="ml-auto text-2xl text-blue-primary sm:hidden h-10 w-10 rounded-full border border-blue-primary"
+          >
+            {mobileMenuOpen ? "X" : "☰"}
+          </button>
         </Container>
       </header>
 
@@ -75,12 +95,11 @@ function Navbar() {
       <a
         href="#"
         className={`transition-all border-2 border-blue-primary ${
-          lastScrollY > 80 ? "opacity-1" : "opacity-0"
-        } fixed bottom-10 right-10 bg-gray-primary rounded-full p-5 transition-all duration-300 ease-linear z-40`}
+          lastScrollY > 80 && !mobileMenuOpen ? "opacity-1" : "opacity-0"
+        } fixed sm:bottom-10 sm:right-10 bottom-4 right-4 bg-gray-primary rounded-full sm:p-5 p-2 transition-all duration-300 ease-linear z-40`}
       >
         <svg
-          width="30px"
-          height="30px"
+          className="w-7 h-7"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

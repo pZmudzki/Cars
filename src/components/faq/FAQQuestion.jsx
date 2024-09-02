@@ -5,8 +5,12 @@ function FAQQuestion({ title, children }) {
 
   return (
     <div className="flex flex-col items-start gap-4">
-      <h3 className="text-2xl font-heading">{title}</h3>
-      <p className={`font-primary text-sm ${isExpanded ? "" : "line-clamp-2"}`}>
+      <h3 className="sm:text-2xl text-xl font-heading">{title}</h3>
+      <p
+        className={`font-primary sm:text-sm text-xs ${
+          isExpanded ? "" : "line-clamp-2"
+        }`}
+      >
         {children}
       </p>
       <button

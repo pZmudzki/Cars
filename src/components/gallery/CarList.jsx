@@ -13,15 +13,21 @@ function CarList({ cars }) {
     return () => clearInterval(interval);
   }, []);
 
+  const screenWidth = window.innerWidth;
+
   return (
     <>
-      <div className="relative h-[400px] mb-10">
+      <div className="relative sm:h-[400px] h-[200px] sm:mb-10">
         <ul
-          className={`flex gap-16 absolute top-0 left-0 transition`}
-          style={{ transform: `translateX(-${currentIdx * 664}px)` }}
+          className={`flex sm:gap-16 gap-6 absolute top-0 left-0 transition`}
+          style={{
+            transform: `translateX(-${
+              screenWidth <= 640 ? currentIdx * 224 : currentIdx * 664
+            }px)`,
+          }}
         >
           {cars.map((car, idx) => (
-            <li key={idx} className="w-[600px]">
+            <li key={idx} className="sm:w-[600px] w-[200px]">
               <img src={car.src} alt={car.alt} />
             </li>
           ))}
