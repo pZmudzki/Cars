@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Container from "./ui/Container";
+import Link from "./ui/Link";
 
 function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -27,7 +28,7 @@ function Navbar() {
       <header
         className={`fixed top-0 ${
           navHidden ? "-translate-y-20" : ""
-        } transition left-0 right-0 h-20 px-4 grid place-items-center bg-gray-primary`}
+        } transition left-0 right-0 h-20 px-4 grid place-items-center bg-gray-primary z-50`}
       >
         <Container>
           <ul className="flex items-center justify-between w-full font-secondary">
@@ -64,12 +65,7 @@ function Navbar() {
               </nav>
             </li>
             <li>
-              <a
-                href="tel:+48123456789"
-                className="py-4 px-7 text-sm bg-blue-primary text-white rounded-lg"
-              >
-                Zadzwoń do nas
-              </a>
+              <Link href="tel:+48123456789">Zadzwoń do nas</Link>
             </li>
           </ul>
         </Container>
