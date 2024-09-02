@@ -11,6 +11,7 @@ export default {
       colors: {
         gray: {
           primary: "#F7F7F7",
+          secondary: "#EDEDED",
           fontPrimary: "#282828",
           fontSecondary: "#1D1D1B",
         },
