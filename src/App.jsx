@@ -1,5 +1,11 @@
+import Navbar from "./components/Navbar";
+
 function App() {
-  return <h1 className="text-4xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="bg-gray-primary h-[2000px]">
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;
