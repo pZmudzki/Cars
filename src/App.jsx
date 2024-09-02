@@ -1,4 +1,5 @@
 import FAQSection from "./components/FAQSection";
+import Footer from "./components/Footer";
 import GallerySection from "./components/GallerySection";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -10,6 +11,7 @@ function App() {
       <HeroSection />
       <GallerySection />
       <FAQSection />
+      <Footer />
     </div>
   );
 }
