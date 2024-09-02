@@ -2,20 +2,23 @@ import { useEffect, useState } from "react";
 
 function CarList({ cars }) {
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [offset, setOffset] = useState(0);
-  console.log(currentIdx);
-
-  console.log(cars);
 
   useEffect(() => {
-    setOffset(currentIdx * 600);
-  }, [currentIdx]);
+    const interval = setInterval(() => {
+      setCurrentIdx((prevIdx) =>
+        prevIdx === cars.length - 1 ? 0 : prevIdx + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
       <div className="relative h-[400px] mb-10">
         <ul
-          className={`flex gap-16 absolute top-0 transition -translate-x-[${offset}px]`}
+          className={`flex gap-16 absolute top-0 left-0 transition`}
+          style={{ transform: `translateX(-${currentIdx * 664}px)` }}
         >
           {cars.map((car, idx) => (
             <li key={idx} className="w-[600px]">
